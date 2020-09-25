@@ -5,7 +5,8 @@ This repository contains a PHP legacy application with home rolled authenticatio
 ### Prerequisites
 
 * A modern PHP
-* FusionAuth installed and setup. See https://fusionauth.io/docs/v1/tech/5-minute-setup-guide (do the first six steps).
+* FusionAuth installed and setup. See https://fusionauth.io/docs/v1/tech/5-minute-setup-guide (do the first six steps). 
+  * Set the callback url to be `http://localhost:8000/oauth-callback.php`.
 * This repo
 
 ### Setup
