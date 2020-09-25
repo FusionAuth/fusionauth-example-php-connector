@@ -2,20 +2,25 @@
 require __DIR__. '/config.php';
 require __DIR__. '/common.php';
 require __DIR__ . '/vendor/autoload.php';
-  error_log("session2: ".var_export($_SESSION, true));
+
+$provider = new \League\OAuth2\Client\Provider\GenericProvider([
+    'clientId'                => $client_id, 
+    'clientSecret'            => $client_secret,
+    'redirectUri'             => $redirect_uri,
+    'urlAuthorize'            => $fa_url.'/oauth2/authorize',
+    'urlAccessToken'          => $fa_url.'/oauth2/token',
+    'urlResourceOwnerDetails' => $fa_url.'/oauth2/userinfo' 
+]);
+
+// Get the state generated for you and store it to the session.
+$_SESSION['oauth2state'] = $provider->getState();
 ?>
 
 Welcome to the application.
 
 <?php if (!$_SESSION['user']) { ?>
-<?php if ($_SESSION['error']) { ?>
-  <br/><span style="color: red;"><?php echo $_SESSION['error']; ?></span><br/>
-<?php } ?>
-<form action="/authenticate.php">
-  Username: <input type="text" name="email"/> <br/>
-  Password: <input type="password" name="password"/> <br/>
-  <input type="submit" value="Log in"/>
-</form>
+<br/>
+<a href='<?php echo $provider->getAuthorizationUrl(); ?>'>Login</a>
 <?php } ?>
 
 <?php if ($_SESSION['user']) { ?>
