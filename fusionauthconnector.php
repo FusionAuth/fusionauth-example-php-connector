@@ -5,7 +5,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Ramsey\Uuid\Uuid;
 
-$input = file_get_contents('php://input');
+$headers = getallheaders();
+if (!$headers) {
+  error_log("Invalid authorization header.");
+  return;
+}
 
 // check auth header
 $authorization_value = $headers['Authorization'];
@@ -13,6 +17,8 @@ if ($authorization_value !== $authorization_header_value) {
   error_log("Invalid authorization header value found: ".$authorization_value);
   return;
 }
+
+$input = file_get_contents('php://input');
 
 $inputobj = json_decode($input);
 if (!$inputobj) {
