@@ -2,7 +2,6 @@
 require __DIR__. '/config.php';
 require __DIR__. '/common.php';
 require __DIR__ . '/vendor/autoload.php';
-  error_log("session2: ".var_export($_SESSION, true));
 ?>
 
 Welcome to the application.
