@@ -9,7 +9,7 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'redirectUri'             => $redirect_uri,
     'urlAuthorize'            => $fa_url.'/oauth2/authorize',
     'urlAccessToken'          => $fa_url.'/oauth2/token',
-    'urlResourceOwnerDetails' => $fa_url.'/oauth2/userinfo' # unsure about this one
+    'urlResourceOwnerDetails' => $fa_url.'/oauth2/userinfo' 
 ]);
 
 if (empty($_GET['state']) || (isset($_SESSION['oauth2state']) && $_GET['state'] !== $_SESSION['oauth2state'])) {
