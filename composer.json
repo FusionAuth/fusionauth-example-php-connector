@@ -1,6 +1,4 @@
 {
     "require": {
-      "fusionauth/fusionauth-client": "^1.19",
-        "ramsey/uuid": "^4.1"
     }
 }
