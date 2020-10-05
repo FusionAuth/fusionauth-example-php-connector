@@ -1,8 +1,8 @@
 <?php
 
 // definitely update
-$client_id = '83767d78-2927-43fa-baef-b556d7c91c9a';
-$client_secret = 'a_pOJZu8D3Fy7a8fVxlPkVa92HPlnUt8d8JfJmtJL5U';
+$client_id = '1892611a-6b99-4457-913f-f39f7c614eb2';
+$client_secret = '4X5_1OVkZi4ottPOrtdzwbe9lbuXRf2Vo9bZJenMkl0';
 $tenant_id = '30663132-6464-6665-3032-326466613934';
 
 // update if you aren't running the app or FusionAuth in the default location 
