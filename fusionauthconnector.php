@@ -47,6 +47,7 @@ $user['tenantId'] = $tenant_id;
 
 $data = [];
 $data['favoriteColor'] = 'blue';
+$data['migratedFromTheAtmDatastore'] = true;
 $user['data'] = $data;
 
 $registrations = [];
