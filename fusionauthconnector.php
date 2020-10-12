@@ -43,7 +43,6 @@ $user['id'] = Uuid::uuid4();
 $user['email'] = $inputobj->loginId;
 $user['active'] = true;
 $user['verified'] = true;
-$user['tenantId'] = $tenant_id;
 
 $data = [];
 $data['favoriteColor'] = 'blue';
