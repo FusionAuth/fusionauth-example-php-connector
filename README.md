@@ -2,6 +2,10 @@
 
 This repository contains a PHP legacy application with home rolled authentication. It's not very secure, any account with a password of 'password' is logged in.
 
+Read the corresponding blog posts:
+
+* https://fusionauth.io/blog/2020/10/07/updating-crufty-php-application
+
 ### Prerequisites
 
 * A modern PHP
