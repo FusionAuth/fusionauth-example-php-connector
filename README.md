@@ -4,7 +4,8 @@ This repository contains a PHP legacy application with home rolled authenticatio
 
 Read the corresponding blog posts:
 
-* https://fusionauth.io/blog/2020/10/07/updating-crufty-php-application
+* https://fusionauth.io/blog/2020/10/07/updating-crufty-php-application/
+* https://fusionauth.io/blog/2020/10/14/how-to-migrate-user-data-centralized-auth-system/
 
 ### Prerequisites
 
