@@ -4,14 +4,13 @@ This repository contains a PHP legacy application with home rolled authenticatio
 
 Read the corresponding blog posts:
 
-* https://fusionauth.io/blog/2020/10/07/updating-crufty-php-application/
-* https://fusionauth.io/blog/2020/10/14/how-to-migrate-user-data-centralized-auth-system/
+* https://fusionauth.io/blog/updating-crufty-php-application
+* https://fusionauth.io/blog/how-to-migrate-user-data-centralized-auth-system
 
 ### Prerequisites
 
 * A modern PHP
-* FusionAuth installed and setup. See https://fusionauth.io/docs/v1/tech/5-minute-setup-guide (do the first six steps). 
-  * Set the callback url to be `http://localhost:8000/oauth-callback.php`.
+* Docker for running FusionAuth
 * This repo
 
 ### Connector license
@@ -21,16 +20,23 @@ Note that Connectors are a feature available to FusionAuth installations with a 
 ### Setup
 
 * Clone this repo and `cd` into it.
+* Update `kickstart/kickstart.json`. Replace the text `ADD LICENSE ID` with a valid FusionAuth license Id retrieved previously.
+  * If you don't have a license Id, this example **will not work**.
+* Run `docker compose up -d` to stand up a preconfigured FusionAuth instance.
 * Run `composer install`.
-* Update the values in `config.php`.
-* Configure a Connector. 
-  * Set the authentication URL to be `http://localhost:8000/fusionauthconnector.php` (for production, please use TLS).
-  * Set the header value of `Authorization` to `supersecretauthheader` or whatever authorization header you set in `config.php`.
-* Associate it with your tenant. Make sure you check the `Migrate User` checkbox.
 * Start a webserver: `php -S 0.0.0.0:8000` . This should not be used for production.
 
 ### To use
 
-* Go to `http://localhost:8000` and login. 
+* Go to `http://localhost:8000` and login.
+* An email address with a password of `password` will be logged in using the connector.
 * Users will who successfully authenticate will be migrated from the legacy application to FusionAuth.
 * If you reset a FusionAuth user's password (using the administrative user interface) to `password2`, that's what you'll have to use to login.
+
+To access the admin UI to see if users are migrated or to examine the connector configuration, open an incongito browser window and visit http://localhost:9011. The username is `admin@example.com` and the password is, you guessed it, `password`.
+
+### Winding down
+
+* Kill the webserver process.
+* `docker compose down -v` will delete the FusionAuth server.
+
