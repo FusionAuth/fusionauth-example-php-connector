@@ -16,7 +16,7 @@ Read the corresponding blog posts:
 
 ### Connector license
 
-Note that Connectors are a feature available to FusionAuth installations with a paid edition. You can [sign up for a 14 day free trial](https://fusionauth.io/pricing) of the "Developer" Edition to test this functionality out.
+Note that Connectors are a feature available to FusionAuth installations with a paid edition. You can [sign up for a 14 day free trial](https://fusionauth.io/pricing) of the "Starter" Edition to test this functionality out.
 
 ### Setup
 
