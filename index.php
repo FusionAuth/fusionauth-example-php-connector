@@ -18,12 +18,12 @@ $_SESSION['oauth2state'] = $provider->getState();
 
 Welcome to the application.
 
-<?php if (!$_SESSION['user']) { ?>
+<?php if (!isset($_SESSION['user'])) { ?>
 <br/>
 <a href='<?php echo $provider->getAuthorizationUrl(); ?>'>Login</a>
 <?php } ?>
 
-<?php if ($_SESSION['user']) { ?>
+<?php if (isset($_SESSION['user']) && $_SESSION['user']) { ?>
   You are logged in.<br/>
 
 <form action="/logout.php">
