@@ -17,6 +17,7 @@
       "description": "Unrestricted API key"
     }
   ],
+  "licenseId": "ADD LICENSE ID",
   "requests": [
     {
       "method": "POST",
