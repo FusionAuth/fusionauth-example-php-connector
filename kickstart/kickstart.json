@@ -122,7 +122,7 @@
       "url": "/api/connector/#{connectorId}",
       "body": {
         "connector": {
-          "authenticationURL": "http://localhost:8000/fusionauthconnector.php",
+          "authenticationURL": "http://host.docker.internal:8000/fusionauthconnector.php",
           "connectTimeout": 2,
           "headers": {
             "authorization": "supersecretauthheader"
