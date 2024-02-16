@@ -123,12 +123,12 @@
       "body": {
         "connector": {
           "authenticationURL": "http://host.docker.internal:8000/fusionauthconnector.php",
-          "connectTimeout": 2,
+          "connectTimeout": 2000,
           "headers": {
-            "authorization": "supersecretauthheader"
+            "Authorization": "supersecretauthheader"
           },
           "name": "Sample connector",
-          "readTimeout": 2,
+          "readTimeout": 2000,
           "type": "Generic"
         }
       }
