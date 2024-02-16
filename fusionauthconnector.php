@@ -39,7 +39,7 @@ if (!auth($inputobj->loginId, $inputobj->password)) {
 $obj = [];
 $user = [];
 
-$user['id'] = Uuid::uuid4();
+$user['id'] = Uuid::uuid4()->toString();
 $user['email'] = $inputobj->loginId;
 $user['active'] = true;
 $user['verified'] = true;
@@ -57,6 +57,9 @@ array_push($registrations, $registration);
 $user['registrations'] = $registrations;
 
 $obj['user'] = $user;
+
+// for debugging
+// error_log(var_export($obj, TRUE));
 
 echo json_encode($obj);
 ?>
